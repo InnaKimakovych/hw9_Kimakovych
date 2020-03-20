@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Example</title>
+    </head>
+    <body>
+    	<!--2. Надо написать функцию, которая вернет «hello world», но при этом в теле функции нельзя использовать ни цифры, ни буквы, 
+    		а циклы, массивы, объекты можно, но без цифр. -->
+      <script>
+        //1. Реализовать методы, которые в процессе выполнения строки (2).plus(3).minus(1) дали бы на выходе 4
+				Number.prototype.plus = function(p) {
+					return this + p;
+				};
+				Number.prototype.minus = function(p) {
+					return this - p;
+				};
+				var res = (2).plus(3).minus(1);
+				console.log(res);
+
+				// 2. 
+				var a = document.body.childNodes;
+				
+				function searchNodes (a) {
+					var w = {}, k;
+					for (var i = 0; i < a.length; i++) {
+						if (a[i].data) {
+							w = a[i].data.split('');
+							for (var j = 0; j < w.length; j++) {
+        				if (w[j] == encodeURIComponent(w[j])) {
+        					k += w[j]; 
+        				}
+        			}
+						}
+					}
+					var b = k.split('.');
+					b.pop();
+					b = b.pop();
+					return b;
+				}
+				console.log(searchNodess(a));
+        </script>
+    </body>
+</html>
+
+		
